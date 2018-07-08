@@ -1,0 +1,16 @@
+{
+    "google" : "Enter Your Key Here!!",
+    "clarifai" : "Enter Your Key Here!!",
+    "imagga" : {
+        "api_key" : "Enter Your Key Here!!",
+        "api_secret" : "Enter Your Key Here!!"
+    },
+    "cloudsight" : {
+        "api_key" : "Enter Your Key Here!!",
+        "api_secret" : "Enter Your Key Here!!"
+    },
+    "sighthound" : "Enter Your Key Here!!",
+    "ibm" : "Enter Your Key Here!!"
+}
+
+
