@@ -13,7 +13,7 @@ import vendors.imagga
 import vendors.ibm
 import vendors.clarifai_
 import vendors.sighthound
-
+import vendors.cloudsight_
 SETTINGS = None
 def settings(name):
     """Fetch a settings parameter."""
@@ -25,7 +25,7 @@ def settings(name):
         # Change this dict to suit your taste.
         SETTINGS = {
             'api_keys_filepath' : './api_keys.json',
-            'input_images_dir' : 'testImages',
+            'input_images_dir' : 'input_images',
             'output_dir' : 'output',
             'output_image_height' : 200,
             'vendors' : {
@@ -33,7 +33,8 @@ def settings(name):
                 'clarifai' : vendors.clarifai_,
                 'ibm' : vendors.ibm,
                 'sighthound' : vendors.sighthound,
-                'imagga' : vendors.imagga,                
+                'imagga' : vendors.imagga,
+                'cloudsight' : vendors.cloudsight_,                
             },
             'resize': True,
             'statistics': [
