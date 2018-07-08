@@ -12,31 +12,82 @@
   <link rel="stylesheet" href="../static/normalize.css">
   <link rel="stylesheet" href="../static/skeleton.css">
   <link rel="stylesheet" href="../static/site.css">
-</head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous"></head>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,800" rel="stylesheet">
 
 <style type="text/css">
-  body{
-    background: #70e1f5;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  }
+	body{
+		font-family: 'Raleway', sans-serif;
+	}
+	#title{
+		padding-top: 40px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		font-size: 50px;
+		font-weight: 800;
+		padding-bottom: 40px;
+	}
+	.par{
+		font-size: 200%;
+	}
+
+	#names{
+		text-align: center;
+		font-size: 25px;
+	}
+	#start{
+		font-size: 20px;
+	}
+	#res{
+		font-size: 35px;
+		padding: 30px;
+		padding-left: 0px;
+		font-weight: 700;
+	}
+	#para{
+		font-family: 'Raleway', sans-serif;
+		padding-bottom: 20px;
+		font-weight: 400;
+	}
+	#api_but{
+		padding-bottom: 20px;
+    	width: 100%;
+		margin-left: 5%;
+		margin-right: auto;    	}
+	.btn{
+		font-size: 20px;
+		border-radius: 11px;
+		font-family: 'Raleway', sans-serif;
+		padding-bottom: 10px;
+	}
+
 </style>
+
 
 <body>
   <div class="container">
 
-      <div class="row">
+      <div class="row" id="start">
         <div class="twelve columns">
 
-        <h2>Comparative Study of Image Recognition APIs</h2>
-        <p>Somya Goel     (14503012)<br>
-        Raghav Panagsa (14503025)<br>
-        Riyu Bana      (14503033)</p>
-        <h4>Results Summary</h4>
-        <p>
-            <b>On {{ process_date.strftime('%b %d, %Y') }}, {{ num_images }} images were processed across {{ num_vendors }} vendors</b>: {{ vendor_names }}.
+        <h2 id="title">Comparative Study of Image Recognition APIs</h2>
+        <p id="names">Somya Goel     (14503012)&nbsp;&nbsp;&nbsp;&nbsp;Raghav Panagsa (14503025)&nbsp;&nbsp;&nbsp;&nbsp;Riyu Bana      (14503033)</p>
+        <h4 id="res">Results Summary</h4>
+        <p id="para">
+            A dataset of 51 images was collected from Google Images and the results were collected across 6 API vendors, Sighthound, Imagga, IBM Watson Visual Recogition, Google Cloud Vision API, Clarifai and CloudSight.
         </p>
-        <p>
+        <div id="api_but">
+        	<a type="button" href="https://www.sighthound.com/" class="btn btn-primary btn-lg">Sighthound</a>
+			<a type="button" href="https://imagga.com/" class="btn btn-success btn-lg">Imagga</a>
+			<a type="button" href="https://www.ibm.com/watson/services/visual-recognition/" class="btn btn-danger btn-lg">IBM Watson Visual Recogition</a>
+			<a type="button" href="https://cloud.google.com/vision/" class="btn btn-warning btn-lg">Google Cloud Vision API</a>
+			<a type="button" href="https://clarifai.com/" class="btn btn-info btn-lg">Clarifai</a>
+			<a type="button" href="https://cloudsight.ai/" class="btn btn-lg">CloudSight</a>
+        </div>
+
+
+        <p id="para">
             A thumbnail of each image is displayed (click to see it fullsize) along with results from each computer vision API vendor.
             <br>
             <a href="#statistics">Statistics on response times</a> and more are at the bottom of the page.
@@ -137,10 +188,8 @@
     {% if vendor_stats|length > 0 %}
     <div class="row" id="statistics">    
         <div class="twelve columns result">
-            <h4>Stats</h4>
-            <p>
-                On time taken, and number of tags returned.
-            </p>
+            <h4 id="res">Stats</h4>
+            <p id="para" class="par">On time taken, and number of tags returned.</p>
             <table class="u-full-width">
                 {% for vendor, stats in vendor_stats.iteritems() %}
                 {% if loop.first %}
